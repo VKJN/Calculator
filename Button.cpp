@@ -17,6 +17,10 @@ void Button::setString(std::string str) {
 
 void Button::setFillColor(sf::Color color)
 {
+	if (flagDefColor) {
+		this->color = color;
+		flagDefColor = false;
+	}
 	shape.setFillColor(color);
 }
 
@@ -48,5 +52,18 @@ void Button::draw(sf::RenderWindow& window) {
 
 sf::Vector2f Button::getPos()
 {
-	return sf::Vector2f(shape.getPosition());
+	return shape.getPosition();
+}
+
+sf::Color Button::getOutlineColor()
+{
+	return shape.getOutlineColor();
+}
+
+sf::Color Button::getColor() {
+	return color;
+}
+
+std::string Button::getString() {
+	return text.getString();
 }

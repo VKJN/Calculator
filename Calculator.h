@@ -1,5 +1,6 @@
 #pragma once
 #include "Button.h"
+#include <iostream>
 
 class Calculator {
 private:
@@ -10,6 +11,12 @@ private:
 										  {"4", "5", "6", "-"},
 										  {"1", "2", "3", "*"},
 										  {".", "0", "=", "/"} };
+	sf::String stringField = "0";
+	sf::Text textField;
+	sf::Font fontField;
+
+	float firstValue, secondValue;
+	std::string operation;
 public:
 	Calculator();
 	void Run();
